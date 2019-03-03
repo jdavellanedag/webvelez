@@ -1,0 +1,100 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+  <!-- Carrusel Content -->
+  <header>
+    <div id="carouselHomeIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselHomeIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselHomeIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselHomeIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active" style="background-image: url('{% static 'core/img/velez-panoramico.jpg' %}')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Una noticia importante</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+          </div>
+        </div>
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('{% static 'core/img/velez-panoramico2.jpg' %}')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Algo bonito del pueblo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+          </div>
+        </div>
+        <!-- Slide Three - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('{% static 'core/img/velez-panoramico3.jpg' %}')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Una noticia mas o algo bonito</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselHomeIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselHomeIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <h1 class="my-4">Bienvenido al portafolio digital de Vélez/Santander</h1>
+
+    <!-- Marketing Icons Section -->
+    <div class="row">
+      <div class="col-lg-12 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">Acerca del sitio</h4>
+          <div class="card-body">
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.
+            <a href="{% url 'about' %}">Leer más ...</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Portfolio Section -->
+    <h2>Páginas amarillas</h2>
+
+    <div class="row" id="portafolioPrincipal">
+      {% for category in categories reversed %}
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="{% url 'categories_list' category.id %}"><img class="card-img-top" src="{{category.image.url}}" alt="{{category.title}}"></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="{% url 'categories_list' category.id %}">{{category.title}}</a>
+              </h4>
+              <p class="card-text">{{category.content}}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <!-- /.row -->
+    <hr>
+
+    <!-- Call to Action Section -->
+    <div class="row mb-4">
+      <div class="col-md-8">
+        <p>Si quieres aparecer en esta página no lo pienses más, esta es tu oportunidad para entrar en el mundo de los negocios digitales.</p>
+      </div>
+      <div class="col-md-4">
+        <a class="btn btn-lg btn-secondary btn-block" href="{% url 'contact' %}">Contactanos...</a>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.container -->
+{% endblock %}

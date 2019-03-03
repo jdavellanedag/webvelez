@@ -1,0 +1,93 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <!-- Page Content -->
+  <div class="container" id="mainVip">
+
+    <div class="row">
+
+      <div class="col-lg-3">
+
+        <h1 class="my-4">{{storevip.title}}</h1>
+        <p>{{storevip.content}}</p>
+        <h3 class="my-3">Contacto</h3>
+        <ul style="list-style: none;">
+          <li><span class='fas fa-mobile-alt' style='font-size:16px'></span> {{storevip.celphone}}</li>
+          <li><span class='fas fa-phone' style='font-size:16px'></span> {{storevip.phone}}</li>
+          <li><span class='fas fa-envelope' style='font-size:16px'></span> {{storevip.email}}</li>
+        </ul>
+        <div class="list-group">
+          <a href="#" class="list-group-item">Categoria A</a>
+          <a href="#" class="list-group-item">Categoria B</a>
+          <a href="#" class="list-group-item">Categoria C</a>
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        <div id="carouselIndicatorsVip" class="carousel slide my-4" data-ride="carousel">
+          <ol class="carousel-indicators">
+          {% for carrusel_images in storevip.get_vip_images.all %}
+            <li data-target="#carouselIndicatorsVip" data-slide-to="0" class="active"></li>
+          {% endfor %}
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            {% for carrusel_images in storevip.get_vip_images.all %}
+              {% if forloop.counter == 1 %}
+                <div class="carousel-item active">
+              {% else %}
+                <div class="carousel-item">
+              {% endif %}
+                  <img class="d-block img-fluid" src="{{carrusel_images.image.url}}" alt="{{carrusel_images.title}}">
+                </div>
+            {% endfor %}
+          </div>
+          <a class="carousel-control-prev" href="#carouselIndicatorsVip" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselIndicatorsVip" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <div class="row">
+          {% for product in storevip.get_vip_products.all reversed%}
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <img class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}">
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <p>{{product.title}}</p>
+                  </h4>
+                  <h5>${{product.price}}</h5>
+                  <p class="card-text">{{product.content}}</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">
+                  {% for i in product.starts|ljust:product.starts %}
+                    &#9733;
+                  {% endfor %}
+                  </small>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+{% endblock %}

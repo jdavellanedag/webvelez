@@ -1,0 +1,82 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">Contacto</h1>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{% url 'home' %}">Inicio</a>
+        </li>
+        <li class="breadcrumb-item active">Contacto</li>
+      </ol>
+      <!-- Contact Form -->
+      <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+      <div class="row">
+        <div class="col-lg-8 mb-4">
+          <h3>Envíanos un mensaje</h3>
+          <form name="sentMessage" id="contactForm" novalidate>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Nombre completo:</label>
+                <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                <p class="help-block"></p>
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Número de celular:</label>
+                <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Correo electrónico:</label>
+                <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Mensaje:</label>
+                <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+              </div>
+            </div>
+            <div id="success"></div>
+            <!-- For success/fail messages -->
+            <button type="submit" class="btn btn-primary" id="sendMessageButton">Enviar mensaje</button>
+          </form>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <p>Otro medios de contacto:</p>
+              </h4>
+              <p class="card-text">
+                <span class='fab fa-whatsapp' style='font-size:24px'></span>
+                 320 987 5981
+              </p>
+              <h4 class="card-title">
+                <p>Nuestras redes sociales:</p>
+              </h4>
+              <p class="card-text">
+                <a href="#" style="color: black"><span class='fab fa-facebook' style='font-size:32px'></span></a>
+                <a href="#" style="color: black"><span class='fab fa-instagram' style='font-size:32px'></span></a>
+                <a href="#" style="color: black"><span class='fab fa-twitter' style='font-size:32px'></span></a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+{% endblock %}

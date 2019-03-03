@@ -1,0 +1,139 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Acerca
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'home' %}">Inicio</a>
+      </li>
+      <li class="breadcrumb-item active">Acerca</li>
+    </ol>
+
+    <!-- Intro Content -->
+    <div class="row">
+      <div class="col-lg-6">
+        <img class="img-fluid rounded mb-4" src="http://placehold.it/750x450" alt="">
+      </div>
+      <div class="col-lg-6">
+        <h2>Portafolio digital Vélez</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Team Members -->
+    <h2>Nuestro equipo</h2>
+
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 text-center">
+          <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Julian David Avellaneda</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Desarrollador</h6>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#">jdavellanedag@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 text-center">
+          <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Miembro del equipo</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Position</h6>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#">name@example.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 text-center">
+          <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Miembro del equipo</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Position</h6>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#">name@example.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+    <h2>Precios</h2>
+    <div class="row" id="cardPrecios">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h3 class="card-header">Plan básico</h3>
+          <div class="card-body">
+            <div class="display-4">$10.000</div>
+            <div class="font-italic">por mes</div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Página básica</li>
+            <li class="list-group-item">5 Imágenes</li>
+            <li class="list-group-item">500 palabras</li>
+            <li class="list-group-item">
+              <a href="#" class="btn btn-primary">Contactanos!</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card card-outline-primary h-100">
+          <h3 class="card-header text-white" id="cardPreciosMejor">Plan VIP</h3>
+          <div class="card-body">
+            <div class="display-4">$15.000</div>
+            <div class="font-italic">por mes</div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Página VIP</li>
+            <li class="list-group-item">10 Imágenes</li>
+            <li class="list-group-item">Sin límite de palabras</li>
+            <li class="list-group-item">Multicategorías</li>
+            <li class="list-group-item">
+              <a href="#" class="btn btn-primary">Contactanos!</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h3 class="card-header">Plan premium</h3>
+          <div class="card-body">
+            <div class="display-4">$25.000</div>
+            <div class="font-italic">por mes</div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Página VIP con prioridad</li>
+            <li class="list-group-item">20 Imágenes</li>
+            <li class="list-group-item">Sin límite de palabras</li>
+            <li class="list-group-item">Panel de administración</li>
+            <li class="list-group-item">
+              <a href="#" class="btn btn-primary">Contactanos!</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+
+{% endblock %}

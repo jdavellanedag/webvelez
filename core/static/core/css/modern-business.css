@@ -1,0 +1,100 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+#carouselHomeIndicators .carousel-item {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+.pagination a {
+  color: rgba(30, 54, 68, 1);
+}
+
+#cardPreciosMejor {
+  background-color: rgba(239, 117, 35, 1);
+}
+
+#carouselHomeIndicators p, h3{
+  color: rgba(30, 54, 68, 1);
+}
+
+#carouselHomeIndicators .carousel-caption {
+  background-color: rgba(212, 214, 185, 0.7);
+}
+
+#mainNav {
+  background-color: rgba(30, 54, 68, 1);
+  font-family: 'Raleway';
+}
+
+#mainNav .navbar-brand {
+  color: rgba(212, 214, 185, 1);
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  color: rgba(212, 214, 185, 1);
+  font-weight: 500;
+}
+
+#mainNav .navbar-nav .nav-item.active .nav-link {
+  color: rgba(252, 202, 70, 1);
+}
+
+#mainNav li:hover{
+  background-color: rgba(212, 214, 185, 0.1);
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+  font-weight: 1000;
+}
+
+#portafolioPrincipal img {
+  opacity: .6;
+}
+
+#portafolioPrincipal a{
+  color: rgba(239, 117, 35, 1);
+}
+
+#portafolioPrincipal img:hover {
+  opacity: 1;
+}
+
+#mainVip a {
+  color: rgba(239, 117, 35, 1);
+}
+
+footer {
+  background-color: rgba(252, 202, 70, 1);
+}
+
+/* Transiciones */
+#mainNav li{
+  transition: background-color .7s;
+}
+
+#portafolioPrincipal img {
+  transition: opacity .7s;
+}

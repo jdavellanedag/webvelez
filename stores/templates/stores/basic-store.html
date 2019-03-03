@@ -1,0 +1,70 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">{{store.title}}
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'home' %}">Inicio</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'categories' %}">Páginas amarillas</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="portfolio-1-col.html">DAÑADO</a>
+      </li>
+      <li class="breadcrumb-item active">{{store.title}}</li>
+    </ol>
+
+    <!-- Portfolio Item Row -->
+    <div class="row">
+
+      <div class="col-md-8">
+        <img class="img-fluid" src="{{store.image.url}}" alt="">
+      </div>
+
+      <div class="col-md-4">
+        <h3 class="my-3">Acerca de la tienda</h3>
+        <p>{{store.content}}</p>
+        <h3 class="my-3">Contacto</h3>
+        <ul>
+          <li>Celular: {{store.celphone}}</li>
+          <li>Telefono: {{store.phone}}</li>
+          <li>Correo: {{store.email}}</li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+    <!-- Related Projects Row -->
+    <h3 class="my-4">Catálogo de productos</h3>
+
+    <div class="row">
+    {% for product in products %}
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card">
+          {% if product.image %}
+          <img class="img-fluid" src="{{product.image.url}}" alt="">
+          {% endif %}
+          <div class="card-body">
+            <h4 class="card-title">
+              <p>{{product.title}}</a>
+            </h4>
+            <p class="card-text">{{product.content}}</p>
+          </div>
+        </div>
+      </div>    
+    {% endfor %}
+    </div>
+  </div>
+  <!-- /.container -->
+
+{% endblock %}
