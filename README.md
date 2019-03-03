@@ -1,2 +1,3 @@
 # webvelez
-Django project, web app shop
+
+Proyecto para aplicación web enfocada a un espacio para tiendas
